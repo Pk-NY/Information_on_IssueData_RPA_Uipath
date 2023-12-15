@@ -1,0 +1,16 @@
+Sub LeftFit()
+  On Error Resume Next
+    Dim ws As Worksheet
+    For Each ws In ThisWorkbook.Sheets
+
+       With ws.Range("C2", ws.Cells(ws.Rows.Count, "C").End(xlUp))
+        .HorizontalAlignment = xlLeft
+     End With
+       With ws.Range("D2", ws.Cells(ws.Rows.Count, "D").End(xlUp))
+        .HorizontalAlignment = xlLeft
+     End With
+
+    Next ws
+   ThisWorkbook.Save
+  On Error GoTo 0
+End Sub
